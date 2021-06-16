@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive form design using jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#ShowForm").click(function(){
+                $("fieldset").toggle(1000);
+            });
+            $("legend").click(function(){
+                $("div").toggle(1000);
+                $("#btn").toggle(1000);
+            });
+        });
+    </script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+      .flexx{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding:2em;
+          height:auto;
+      }
+      fieldset{
+          display:none;
+        background-color: #f2f2f2;
+          width:45vw;
+          padding:auto;
+          margin:auto;
+          border:2px solid black;
+         
+      }
+      fieldset legend{
+          text-align: center;
+          color:black;
+          font-weight: bold;
+      }
+      label{
+          font-size:1rem;
+          font-family:cursive;
+          padding-right: 2em;
+      }
+      div{
+        display: none;
+          padding:1em;
+      }
+      input{
+          float:right;
+          border:2px solid black;
+          padding:5px;
+          width:25vw;
+          border-radius: 10px;
+          text-align: center;
+      }
+      
+      select{
+          width:25vw;
+          padding:5px;
+          border-radius: 10px;
+          border:2px solid black;
+      }
+      #country{
+          float:right;
+      }
+      textarea{
+          width:30vw;
+          border:2px solid black;
+      }
+      #btn{
+        display: none;
+          width:100px;
+          padding:10px;
+          border-radius: 10px;
+          border:2px solid black;   
+      }
+      #ShowForm{
+          width:100%;
+          text-align: center;
+          padding:10px 0px 10px 0px;
+          left:50%; 
+          border-radius: 10px;
+          border:2px solid black;
+      }
+      #btn:hover{
+          background-color: white;
+          color:black;
+      }
+    </style>
+</head>
+
+<body>
+    <button id="ShowForm">Show Form</button>
+    <form action="#" class="flexx" >
+        <fieldset >
+            <legend>Click On Me</legend>
+            <div>
+                <label for="fname">First Name</label>
+                <input type="text" name="fname" id="fname" autofocus required placeholder="Enter your first name">
+            </div>
+            <div>
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname" id="lname" required placeholder="Enter your last name">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required placeholder="Enter your email">
+            </div>
+            <div>
+                <label for="phone">Phone</label>
+                <input type="number" name="phone" id="phone" placeholder="Enter your Phone">
+            </div>
+            <div>
+                <label for="country">Country</label>
+                <select name="country" id="country" name="country">
+                    <option value="india">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="Russia">Russia</option>
+                    <option value="France">France</option>
+                </select>
+            </div>
+            <div>
+                <label for="comment">Comment</label><br><br>
+                <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Comment here..."></textarea>
+            </div>
+            <div>
+                <button id="btn">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>
